@@ -1,0 +1,39 @@
+#+TITLE: Sudhanv Apte Resume
+#+OPTIONS: num:nil \n:t html-postamble:nil toc:nil
+#+LaTeX_HEADER: \usepackage{fa_orgmode_cv}
+
+
+* Education
+Master's in Electrical Engineering at National Taipei University of Technology, Taiwan, 2021-2023
+
+Bachelor of Technology at S.R.M Institue of Science and Technology, Chennai, 2017-2021
+
+* Experience
+
+[[https://getpeppermint.co][Peppermint Robotics]] (Pune, India)
+Intern
+June 2021 - Aug 2021
+Worked on Object Detection and Tracking using YOLO.
+
+[[https://itlab.ee.ntut.edu.tw/][Intelligent Control Lab]] (Taipei, Taiwan)
+Research Assistant
+July 2020 - Jan 2021
+Worked on a Autonomous Food Delivery Robot
+
+* Projects
+Autonomous Storage/Retrieval Robot [[https://github.com/sudhanv09/Warehouse-Bot][Github]]
+    Final Project at SRM IST. Designed a robot
+    capable of dynamic obstacle avoidance and can
+    retrieve packages.
+
+Campus Rover
+    Design and Programming of BLE module
+    Implemented TEB Local Planner on the robot
+
+AprilTag Follower [[https://github.com/sudhanv09/AprilTag-Follower][Github]]
+  A program for detection of AprilTags and make the robot follow
+  them
+
+* Skills
+Programming Languages: Python, C#, C++
+Others: OpenCV, ROS, PyTorch
