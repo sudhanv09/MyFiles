@@ -1,0 +1,31 @@
+#! /bin/sh
+
+# startup
+sxhkd &
+feh --bg-fill $HOME/Pictures/colosseum.jpg &
+wal -i $HOME/Pictures/colosseum.jpg -q &
+picom --config $HOME/.config/picom/picom.conf &
+$HOME/.config/polybar/launch.sh &
+
+bspc config border_width         2
+bspc config window_gap          16 
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config top_padding          20
+bspc config bottom_padding       20
+bspc config left_padding         20
+bspc config right_padding 	 20
+
+bspc monitor -d I II III IV V
+
+# Set the border colors.
+bspc config normal_border_color "$color1"
+bspc config active_border_color "$color2"
+bspc config focused_border_color "$color15"
+bspc config presel_feedback_color "$color1"
+
+bspc config focus_follows_pointer true
+
