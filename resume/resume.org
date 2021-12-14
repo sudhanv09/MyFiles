@@ -1,39 +1,44 @@
-#+TITLE: Sudhanv Apte Resume
-#+OPTIONS: num:nil \n:t html-postamble:nil toc:nil
-#+LaTeX_HEADER: \usepackage{fa_orgmode_cv}
+#+OPTIONS: toc:nil H:10 tex:t
+#+STARTUP: hidestars indent
+#+INCLUDE: personal.org
+#+LaTeX_HEADER: \usepackage{punchagan}
+#+LaTeX_HEADER: \hypersetup{colorlinks=true, urlcolor={url-gray}}
+#+LaTeX_CLASS_OPTIONS: [letterpaper]
+#+LaTeX_HEADER: \usepackage{enumitem}
+#+LaTeX_HEADER: \setlist{leftmargin=0.25in,nosep}
 
-
-* Education
-Master's in Electrical Engineering at National Taipei University of Technology, Taiwan, 2021-2023
-
-Bachelor of Technology at S.R.M Institue of Science and Technology, Chennai, 2017-2021
+{{{HEADER}}}
 
 * Experience
-
-[[https://getpeppermint.co][Peppermint Robotics]] (Pune, India)
-Intern
-June 2021 - Aug 2021
-Worked on Object Detection and Tracking using YOLO.
-
-[[https://itlab.ee.ntut.edu.tw/][Intelligent Control Lab]] (Taipei, Taiwan)
-Research Assistant
-July 2020 - Jan 2021
-Worked on a Autonomous Food Delivery Robot
+** Intern at [[http://getpeppermint.co][Peppermint]]
+*** May 2021 - Aug 2021
+Worked on Object Detection and Tracking for obstacle avoidance in crowded areas.
+** Research Assistant at [[https://itlab.ee.ntut.edu.tw/][Intelligent Control Lab]]
+*** Jul 2021 - Jan 2021
+- BLE Module for Elevator Access
+- Implementing Local Planner on Food Delivery Robot
 
 * Projects
-Autonomous Storage/Retrieval Robot [[https://github.com/sudhanv09/Warehouse-Bot][Github]]
-    Final Project at SRM IST. Designed a robot
-    capable of dynamic obstacle avoidance and can
-    retrieve packages.
+** [[https://github.com/sudhanv09/Warehouse-Bot][Warehouse-Bot]]
+*** Python
+Warehouse bot is a robot designed to replace AS/RS systems in warehouses. It is
+designed to be autonomous with dynamic obstacle avoidance capabilities.
 
-Campus Rover
-    Design and Programming of BLE module
-    Implemented TEB Local Planner on the robot
+** [[https://github.com/sudhanv09/BLE-Advertiser-Listener][BLE]]
+*** C
+A BLE Advertiser/Listener module to allow robot to access the elevator.
 
-AprilTag Follower [[https://github.com/sudhanv09/AprilTag-Follower][Github]]
-  A program for detection of AprilTags and make the robot follow
-  them
+** Deep Learning
+*** Python
+Implemented DQN, GAN
+* Education
+** NTUT, Taiwan
+*** Sep 2021 - Jul 2023
+/M.Sc, Electrical Engineering/
 
+** SRM IST, Chennai, India
+*** Aug 2017 - Jun 2021
+/B.Tech, Mechatronics Engineering/, GPA: 7.2/10
 * Skills
-Programming Languages: Python, C#, C++
-Others: OpenCV, ROS, PyTorch
+  - Most comfortable with :: Python, ROS, Git, Linux
+  - Have worked with :: C/C++, C#, Torch
