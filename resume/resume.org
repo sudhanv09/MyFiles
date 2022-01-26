@@ -9,12 +9,17 @@
 
 {{{HEADER}}}
 
+
+* Introduction
+Amateur Python programmer with 2+ experience of building robots and software. I am a believer in
+and advocate of FOSS.
+
 * Experience
 ** Intern at [[http://getpeppermint.co][Peppermint]]
 *** May 2021 - Aug 2021
 Worked on Object Detection and Tracking for obstacle avoidance in crowded areas.
 ** Research Assistant at [[https://itlab.ee.ntut.edu.tw/][Intelligent Control Lab]]
-*** Jul 2021 - Jan 2021
+*** Jul 2020 - Jan 2021
 - BLE Module for Elevator Access
 - Implementing Local Planner on Food Delivery Robot
 
@@ -26,11 +31,16 @@ designed to be autonomous with dynamic obstacle avoidance capabilities.
 
 ** [[https://github.com/sudhanv09/BLE-Advertiser-Listener][BLE]]
 *** C
-A BLE Advertiser/Listener module to allow robot to access the elevator.
+A BLE Advertiser/Listener module to allow robot access to the elevator.
 
 ** Deep Learning
 *** Python
-Implemented DQN, GAN
+Hobby projects on GAN, Reinforcement Learning, Semantic Segmentation
+
+** CryptoWatcher
+*** C#
+A WebApp made with Blazor using CoinGecko API to get latest crypto prices.
+
 * Education
 ** NTUT, Taiwan
 *** Sep 2021 - Jul 2023

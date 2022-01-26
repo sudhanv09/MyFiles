@@ -48,6 +48,9 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
-(package! lsp-python-ms)
-(package! nim-mode)
+
+(package! ox-reveal)
 (package! jupyter)
+(package! org-superstar)
+(package! bibtex-completion)
+(package! org-ref)

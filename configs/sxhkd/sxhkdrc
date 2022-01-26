@@ -2,13 +2,19 @@
 # ================= Apps ===========================
 #Terminal
 super + Return
-	konsole
+	kitty
 #Program launcher
 super + r
 	dmenu_run 
 # Firefox
-super + b
+super + f
 	firefox
+# Emacs
+super + alt + e
+  emacs
+# Evolution
+super + alt + t
+  evolution
 # ============================ Window Control =================================	
 #Set the window state
 super + w ; {t,s,f}

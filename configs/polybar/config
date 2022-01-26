@@ -60,7 +60,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = bspwm 
 modules-center = 
-modules-right = arrow1 networkspeedup networkspeeddown wlan arrow2 kdeconnect arrow3 pavolume arrow2 date battery
+modules-right = arrow1 networkspeedup networkspeeddown wlan arrow2 pavolume arrow3 date battery
 
 tray-detached = false
 tray-offset-x = 0

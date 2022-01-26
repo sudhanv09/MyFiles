@@ -53,6 +53,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(setq projectile-project-search-path '("~/code/"))
+
 (require 'org-superstar)
 (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
@@ -63,11 +65,29 @@
    )
 )
 
-(setq projectile-project-search-path '("~/code/"))
+(with-eval-after-load 'ox-latex
+  (add-to-list 'org-latex-classes
+     '("IEEEtran" "\\documentclass[11pt]{IEEEtran}"
+       ("\\section{%s}" . "\\section*{%s}")
+       ("\\subsection{%s}" . "\\subsection*{%s}")
+       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+       ("\\paragraph{%s}" . "\\paragraph*{%s}")
+       ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
-(use-package lsp-python-ms
-  :ensure t
-  :init (setq lsp-python-ms-auto-install-server t)
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-python-ms)
-                          (lsp))))  ; or lsp-deferred
+(org-link-set-parameters
+   "subfig"
+   :follow (lambda (file) (find-file file))
+   :face '(:foreground "chocolate" :weight bold :underline t)
+   :display 'full
+   :export (lambda (file desc backend)
+	     (when (eq backend 'latex)
+	       (if (string-match ">(\\(.+\\))" desc)
+		   (concat "\\subfigure[" (replace-regexp-in-string "\s+>(.+)" "" desc) "]"
+			   "{\\includegraphics"
+			   "["
+			   (match-string 1 desc)
+			   "]"
+			   "{"
+			   file
+			   "}}")
+		 (format "\\subfigure[%s]{\\includegraphics{%s}}" desc file)))))
