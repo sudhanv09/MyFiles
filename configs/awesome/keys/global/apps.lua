@@ -21,15 +21,6 @@ return gears.table.join(
       }
     ),
 
---    awful.key(
---      { modkey }, "s", 
---      function () awful.spawn.with_shell(apps.screenshot.screen) end,
---      {
---        description = "make a screenshot of the current monitor", 
---        group = "launcher"
---      }
---    ),
-
     awful.key(
       { modkey }, "q", 
       function () awful.spawn(apps.lockscreen) end,
@@ -40,9 +31,9 @@ return gears.table.join(
     ),
 
   awful.key(
-     { }, "Print", function () awful.util.spawn("flameshot") end,
+     { }, "Print", function () awful.util.spawn("scrot") end,
       {
-        description = "lock the screen", 
+        description = "Screenshot screen", 
         group = "screenshot"
       }
     ),
@@ -52,6 +43,15 @@ return gears.table.join(
       function () awful.util.spawn("kitty -e ranger") end,
       {
         description = "ranger", 
+        group = "launcher"
+      }
+    ),
+
+  awful.key(
+      { modkey, "Shift" }, "c", 
+      function () awful.util.spawn("calibre") end,
+      {
+        description = "calibre", 
         group = "launcher"
       }
     ),

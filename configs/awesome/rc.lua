@@ -13,3 +13,5 @@ require("ui")
 require("rules")
 
 require("autostart")
+
+beautiful.useless_gap = 5
