@@ -65,16 +65,31 @@
 
 (setq projectile-project-search-path '("~/code/"))
 
-(use-package lsp-python-ms
-  :ensure t
-  :init (setq lsp-python-ms-auto-install-server t)
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-python-ms)
-                          (lsp))))  ; or lsp-deferred
+;; IEEE template org mode
+(with-eval-after-load 'ox-latex
+  (add-to-list 'org-latex-classes
+     '("IEEEtran" "\\documentclass[11pt]{IEEEtran}"
+       ("\\section{%s}" . "\\section*{%s}")
+       ("\\subsection{%s}" . "\\subsection*{%s}")
+       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+       ("\\paragraph{%s}" . "\\paragraph*{%s}")
+       ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
-(add-to-list 'lsp-language-id-configuration '(nim-mode . "nim"))
-(lsp-register-client
- (make-lsp-client :new-connection (lsp-stdio-connection "nimlsp")
-                  :major-modes '(nim-mode)
-                  :server-id 'nimlsp))
-(add-hook 'nim-mode-hook #'lsp)
+;; Add subfigs with org mode
+(org-link-set-parameters
+   "subfig"
+   :follow (lambda (file) (find-file file))
+   :face '(:foreground "chocolate" :weight bold :underline t)
+   :display 'full
+   :export (lambda (file desc backend)
+	     (when (eq backend 'latex)
+	       (if (string-match ">(\\(.+\\))" desc)
+		   (concat "\\subfigure[" (replace-regexp-in-string "\s+>(.+)" "" desc) "]"
+			   "{\\includegraphics"
+			   "["
+			   (match-string 1 desc)
+			   "]"
+			   "{"
+			   file
+			   "}}")
+		 (format "\\subfigure[%s]{\\includegraphics{%s}}" desc file)))))

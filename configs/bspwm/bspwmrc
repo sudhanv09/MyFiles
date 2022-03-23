@@ -4,7 +4,8 @@
 sxhkd &
 nitrogen --restore
 picom --experimental-backends -b &
-$HOME/.config/polybar/launch.sh --forest &
+$HOME/.config/polybar/launch.sh --material &
+xss-lock -l ~/.config/bspwm/transfer-sleep-lock-generic-delay.sh &
 
 bspc config border_width         2
 bspc config window_gap          16 
@@ -18,11 +19,15 @@ bspc config bottom_padding       10
 bspc config left_padding         20
 bspc config right_padding 	     20
 
-bspc monitor -d 1 2 3 4 5
+bspc monitor -d 1 2 3 4 5 6 7
 
-bspc rule -a vlc desktop='^5' state=fullscreen
+bspc rule -a mpv desktop='^5' state=fullscreen
+bspc rule -a SMPlayer desktop='^5' state=fullscreen
+bspc rule -a Kodi desktop='^5' 
+
 bspc rule -a firefox desktop='^2' state=tiled
-bspc rule -a Emacs desktop='^3' state=tiled
-bspc rule -a JDownloader2 desktop='^4' state=tiled
-bspc rule -a Evolution desktop='^4' state=tiled
 
+bspc rule -a Emacs desktop='^3' state=tiled
+bspc rule -a libreoffice desktop='^3' state=tiled
+
+bspc rule -a Evolution desktop='^4' state=tiled

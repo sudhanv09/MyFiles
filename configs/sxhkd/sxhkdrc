@@ -10,8 +10,8 @@ super + r
 super + f
 	firefox
 # {Emacs, Evolution, Ranger, Calibre}
-super + a; {e,t,r,c}
-  {emacs,evolution,kitty -e ranger,calibre}
+super + a; {e,t,r,c,k}
+  {emacs,evolution,kitty -e ranger,calibre,kodi}
 # helper
 super + e
   sxhkhmenu
@@ -25,6 +25,11 @@ super + {_,shift + }{h,j,k,l}
 # Focus or send to the given desktop {1-9,10}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Show hidden
+super + shift + m
+  bspc node $(bspc query -N -n. hidden.local.window) --flag hidden=off
+
 
 #  # Preselect the direction {west,south,north,east}
 #  super + ctrl + {h,j,k,l}
@@ -58,10 +63,10 @@ XF86AudioMute
 	amixer set Master toggle
 #Brightness Increase
 XF86MonBrightnessUp
-	brightnessctl s 15%+
+	brightnessctl s 5%+
 # Brightness Decrease
 XF86MonBrightnessDown
-	brightnessctl s 15%-
+	brightnessctl s 5%-
 
 # ================== BSPWM ==================================
 
