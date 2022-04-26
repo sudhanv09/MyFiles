@@ -93,3 +93,5 @@
 			   file
 			   "}}")
 		 (format "\\subfigure[%s]{\\includegraphics{%s}}" desc file)))))
+
+(setq dired-listing-switches "-lh --group-directories-first")
