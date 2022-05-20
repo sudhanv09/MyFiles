@@ -2,7 +2,7 @@
 # ================= Apps ===========================
 # Terminal
 super + Return
-	kitty
+	alacritty
 # Program launcher
 super + r
 	rofi -show drun 
@@ -11,7 +11,7 @@ super + f
 	firefox
 # {Emacs, Evolution, Ranger, Calibre}
 super + a; {e,t,r,c,k}
-  {emacs,evolution,kitty -e ranger,calibre,kodi}
+  {emacs,evolution,alacritty -e ranger,calibre,kodi}
 # helper
 super + e
   sxhkhmenu
