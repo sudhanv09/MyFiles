@@ -113,7 +113,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ls="exa -G --icons"
-alias dust="dust -rbi -d 1"
+alias dust="dust -rb -d 1"
+alias emacs="emacsclient -c -a emacs"
 
 typeset -U path
 setopt extended_glob
