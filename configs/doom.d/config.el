@@ -53,6 +53,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(setq org-list-allow-alphabetical t)
 (require 'org-superstar)
 (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
@@ -94,4 +95,3 @@
 			   "}}")
 		 (format "\\subfigure[%s]{\\includegraphics{%s}}" desc file)))))
 
-(setq dired-listing-switches "-lh --group-directories-first")
