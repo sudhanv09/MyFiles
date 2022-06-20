@@ -64,7 +64,8 @@
    )
 )
 
-(setq projectile-project-search-path '("~/code/"))
+(setq projectile-project-search-path '("~/code"))
+
 
 ;; IEEE template org mode
 (with-eval-after-load 'ox-latex
@@ -94,4 +95,3 @@
 			   file
 			   "}}")
 		 (format "\\subfigure[%s]{\\includegraphics{%s}}" desc file)))))
-

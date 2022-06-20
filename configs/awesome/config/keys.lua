@@ -12,8 +12,8 @@ local misc          = require("misc")
 require("layout.lockscreen").init()
 
 
--- vars/misc
--- ~~~~~~~~~
+-- Start sxhkd
+-- awful.spawn.with_shell("sxhkd ~/.config/awesome/config/asxhkdrc")
 
 -- modkey
 local modkey = "Mod4"
@@ -40,27 +40,43 @@ awful.keyboard.append_global_keybindings({
   awful.key({ modkey }, "Return", function()
     awful.spawn(user_likes.term)
   end,
-    { description = "open terminal", group = "launcher" }),
-
-  --	awful.key({ modkey }, "s", function()
-  --		awful.spawn(user_likes.music)
-  --	end,
-  --    { description = "launch music client", group = "launcher" }),
+    { description = "open terminal", group = "User" }),
 
   awful.key({ modkey }, "f", function()
     awful.spawn.with_shell(user_likes.web)
   end,
-    { description = "open web browser", group = "launcher" }),
+    { description = "open web browser", group = "User" }),
 
   awful.key({ modkey }, "r", function()
     awful.spawn(misc.rofiCommand)
   end,
-    { description = "open rofi", group = "launcher" }),
+    { description = "open rofi", group = "User" }),
 
-  --	awful.key({ modkey }, "r", function()
-  --        awful.spawn(home_var .. "/.scripts/picker", false)
-  --	end,
-  --    { description = "exec color picker", group = "launcher" }),
+  awful.key({ modkey, alt }, "e", function()
+    awful.spawn(user_likes.code)
+  end,
+    { description = "launch Emacs", group = "User" }),
+
+
+  awful.key({ modkey, alt }, "t", function()
+    awful.spawn("evolution")
+  end,
+    { description = "Run Evolution", group = "User" }),
+
+  awful.key({ modkey, alt }, "x", function()
+    awful.spawn("alacritty -e xplr")
+  end,
+    { description = "Open xplr", group = "User" }),
+
+  awful.key({ modkey, alt }, "c", function()
+    awful.spawn("calibre")
+  end,
+    { description = "Run Calibre", group = "User" }),
+
+  awful.key({ modkey, alt }, "k", function()
+    awful.spawn("kodi")
+  end,
+    { description = "Run Kodi", group = "User" }),
 
   awful.key({ modkey }, "c", function()
     if control_c.visible then
@@ -75,6 +91,7 @@ awful.keyboard.append_global_keybindings({
     lock_screen_show()
   end,
     { description = "show lockscreen", group = "launcher" }),
+
 })
 
 
@@ -125,16 +142,11 @@ awful.keyboard.append_global_keybindings({
 
 })
 
-
-
 -- awesome yeah!
 awful.keyboard.append_global_keybindings({
 
   awful.key({ modkey, shift }, "h", hotkeys_popup.show_help,
     { description = "show this help window", group = "awesome" }),
-
-  --  awful.key({ modkey, ctrl }, "r", awesome.restart,
-  --    { description = "reload awesome", group = "awesome" }),
 
   awful.key({ modkey, alt }, "r", awesome.restart,
     { description = "reload awesome", group = "awesome" }),
@@ -148,10 +160,10 @@ awful.keyboard.append_global_keybindings({
 })
 
 -- Tags related keybindings
-awful.keyboard.append_global_keybindings({
-  awful.key({ modkey }, "Escape", awful.tag.history.restore,
-    { description = "go back", group = "tags" }),
-})
+-- awful.keyboard.append_global_keybindings({
+--   awful.key({ modkey }, "Escape", awful.tag.history.restore,
+--     { description = "go back", group = "tags" }),
+-- })
 
 -- Focus related keybindings
 awful.keyboard.append_global_keybindings({
@@ -177,16 +189,16 @@ awful.keyboard.append_global_keybindings({
     end,
     { description = "window switcher", group = "client" }),
 
-  awful.key({ modkey, ctrl }, "j", function()
-    awful.screen.focus_relative(1)
-  end,
-    { description = "focus the next screen", group = "screen" }),
+  -- awful.key({ modkey, ctrl }, "j", function()
+  --   awful.screen.focus_relative(1)
+  -- end,
+  --   { description = "focus the next screen", group = "screen" }),
 
 
-  awful.key({ modkey, ctrl }, "k", function()
-    awful.screen.focus_relative(-1)
-  end,
-    { description = "focus the previous screen", group = "screen" }),
+  -- awful.key({ modkey, ctrl }, "k", function()
+  --   awful.screen.focus_relative(-1)
+  -- end,
+  --   { description = "focus the previous screen", group = "screen" }),
 
 
   awful.key({ modkey, ctrl }, "n",
@@ -351,7 +363,7 @@ end)
 -- client mgmt
 client.connect_signal("request::default_keybindings", function()
   awful.keyboard.append_client_keybindings({
-    awful.key({ modkey, }, "c",
+    awful.key({ modkey, shift }, "f",
       function(c)
         c.fullscreen = not c.fullscreen
         c:raise()

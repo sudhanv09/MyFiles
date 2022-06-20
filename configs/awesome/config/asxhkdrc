@@ -1,0 +1,55 @@
+# ========== Apps=============
+# Terminal
+super + Return
+	echo "awful.spawn(alacritty)" | awesome-client
+
+# Program launcher
+super + r
+	echo "awful.spawn(rofi -show drun)" | awesome-client
+
+# Firefox
+super + f
+	echo "awful.spawn(alacritty)"| awesome-client
+
+# Emacs, Evolution, Ranger, Calibre
+super + a; {e,t,r,c,k}
+	echo "awful.spawn('{emacs,evolution,alacritty -e ranger,calibre,kodi}')" | awesome-client
+
+# Helper menu
+super + a + {h}
+  echo "require(awful.hotkeys_popup).hotkeys_pop.show_help" | awesome-client
+# ======================================
+
+# =========== Window settings ==========
+
+# Awesome restart
+super + alt + {r,q}
+  echo "awesome.{restart,quit}()" | awesome-client
+
+# Lock Screen
+super + shift + l
+  echo "require(layout.lockscreen).lock_screen_show()" | awesome-client
+
+# =======================================
+
+# ======== Volume and Brightness ========
+
+# Volume 
+
+XF86AudioLowerVolume
+	echo "awful.spawn(amixer -D pulse set Master 5%-)" | awesome-client
+# Volume Increase
+XF86AudioRaiseVolume
+  echo "awful.spawn(amixer set Master 5%+)" | awesome-client
+# Mute
+XF86AudioMute
+	echo "awful.spawn(amixer set Master toggle)" | awesome-client
+#Brightness Increase
+XF86MonBrightnessUp
+	echo "awful.spawn(brightnessctl s 5%+)" | awesome-client
+# Brightness Decrease
+XF86MonBrightnessDown
+	echo "awful.spawn(brightnessctl s 5%-)" | awesome-client
+
+
+# =======================================

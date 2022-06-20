@@ -4,32 +4,32 @@
 ]]
 
 
-pcall (require, "luarocks.loader")
+pcall(require, "luarocks.loader")
 
 
 -- home variable 🏠
-home_var        = os.getenv("HOME")
+home_var = os.getenv("HOME")
 
 
 -- user preferences ⚙️
-user_likes      = {
+user_likes = {
 
-    -- aplications
-    term        = "kitty",
-    editor      = "kitty -e " .. "nvim",
-    code        = "emacs",
-    web         = "firefox",
-    music       = "alacritty --class 'music' --config-file " .. home_var .. "/.config/alacritty/ncmpcpp.yml -e ncmpcpp ",
-    files       = "ranger",
+  -- aplications
+  term   = "wezterm",
+  editor = "wezterm -e " .. "nvim",
+  code   = "emacs",
+  web    = "firefox",
+  music  = "alacritty --class 'music' --config-file " .. home_var .. "/.config/alacritty/ncmpcpp.yml -e ncmpcpp ",
+  files  = "ranger",
 
-    -- weather info
-    weather_key     = "",
-    city_id         = "",
-    weather_unit    = "metric",
+  -- weather info
+  weather_key  = "",
+  city_id      = "",
+  weather_unit = "metric",
 
-    -- your profile
-    username = os.getenv("USER") or "user",
-    userdesc = "@computer"
+  -- your profile
+  username = os.getenv("USER") or "user",
+  userdesc = "@computer"
 }
 
 
