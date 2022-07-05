@@ -1382,7 +1382,7 @@ xplr.config.modes.builtin.selection_ops = {
           {
             BashExec = [===[
               (while IFS= read -r line; do
-              if cp -vr -- "${line:?}" ./; then
+              if rsync -avP -- "${line:?}" ./; then
                 echo LogSuccess: $line copied to $PWD >> "${XPLR_PIPE_MSG_IN:?}"
               else
                 echo LogError: Failed to copy $line to $PWD >> "${XPLR_PIPE_MSG_IN:?}"
@@ -1402,7 +1402,7 @@ xplr.config.modes.builtin.selection_ops = {
           {
             BashExec = [===[
               (while IFS= read -r line; do
-              if mv -v -- "${line:?}" ./; then
+              if rsync -avP --remove-source-files -- "${line:?}" ./; then
                 echo LogSuccess: $line moved to $PWD >> "${XPLR_PIPE_MSG_IN:?}"
               else
                 echo LogError: Failed to move $line to $PWD >> "${XPLR_PIPE_MSG_IN:?}"
@@ -2594,3 +2594,22 @@ end
 -- You can also use nested tables such as
 -- `xplr.fn.custom.my_plugin.my_function` to define custom functions.
 xplr.fn.custom = {}
+
+
+-- Plugins
+local home = os.getenv("HOME")
+package.path = home
+    .. "/.config/xplr/plugins/?/init.lua;"
+    .. home
+    .. "/.config/xplr/plugins/?.lua;"
+    .. package.path
+
+require("dual-pane").setup()
+
+require("map").setup {
+  mode = "default", -- or `xplr.config.modes.builtin.default`,
+  key = "M",
+  editor = os.getenv("EDITOR") or "vim",
+  placeholder = "{}",
+  prefer_multi_map = false,
+}
